@@ -1,0 +1,8 @@
+* , body , html {
+    font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu,sans-serif !important;
+    @apply select-none;
+}
+
+#dayCount{
+    font-family: Impact, "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu,sans-serif !important;
+}
