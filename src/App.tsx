@@ -10,6 +10,13 @@ import Loader from "./Loader";
 import Navbar from "./component/Navbar";
 
 function App() {
+  const [isCharDone, setIsCharDone] = useState<boolean>(false);
+  const imgCharRef = useRef<HTMLImageElement>(null);
+
+  imgCharRef.current?.addEventListener("load", () => {
+    setIsCharDone(true);
+  });
+
   // get random Number
   const [randNumber, setRandNum] = useState<number>(1);
   const getRandomNum = () => {
@@ -25,23 +32,21 @@ function App() {
     setImageUrl("");
     getRandomNum();
 
-    setTimeout(() => fcGetDisplayImg(), 800);
+    setTimeout(() => fcGetDisplayImg(), 1000);
   };
 
   // get the main color of the character
   const mainClr: string = CharacterInfo[randNumber].color;
 
   // function display Image
-  const fcGetDisplayImg = () => {
+  const fcGetDisplayImg = (): void | Promise<string> => {
     let target = oDivRef.current;
     if (!target) return alert("Getting Some Error");
     return toPng(target)
       .then((dataUrl) => {
         setImageUrl(dataUrl);
+        return dataUrl;
       })
-      .catch(function (error) {
-        console.error("oops, something went wrong!", error);
-      });
   };
 
   // get the date
@@ -69,10 +74,14 @@ function App() {
     link.click();
     document.body.removeChild(link);
   };
-  const handleBtnClick = () => downloadImage(imageUrl);
+  const handleBtnClick = () => {
+    fcGetDisplayImg()?.then((dataUrl: string) => {
+      downloadImage(dataUrl);
+    });
+  };
 
   useEffect(() => {
-    let ImgTimeout = setTimeout(() => fcGetDisplayImg(), 800);
+    let ImgTimeout = setTimeout(() => fcGetDisplayImg(), 1000);
     return () => {
       clearTimeout(ImgTimeout);
     };
@@ -149,6 +158,7 @@ function App() {
 
             <img
               src={CharacterInfo[randNumber].image}
+              ref={imgCharRef}
               alt=""
               id="Character"
               height="100%"
