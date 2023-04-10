@@ -51,7 +51,7 @@ function App() {
   // get the date
   const [daysSinceStart, setDaysSinceStart] = useState(0);
   // 2022-08-08 23:59:59
-  const startDate = new Date("2022-08-08");
+  const startDate = new Date("2022-08-08 00:00:01");
   useEffect(() => {
     // Calculate the number of days since the start date
     const currentDate = new Date();
