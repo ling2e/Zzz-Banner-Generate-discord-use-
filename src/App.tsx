@@ -42,11 +42,10 @@ function App() {
   const fcGetDisplayImg = (): void | Promise<string> => {
     let target = oDivRef.current;
     if (!target) return alert("Getting Some Error");
-    return toPng(target)
-      .then((dataUrl) => {
-        setImageUrl(dataUrl);
-        return dataUrl;
-      })
+    return toPng(target).then((dataUrl) => {
+      setImageUrl(dataUrl);
+      return dataUrl;
+    });
   };
 
   // get the date
@@ -75,9 +74,11 @@ function App() {
     document.body.removeChild(link);
   };
   const handleBtnClick = () => {
-    fcGetDisplayImg()?.then((dataUrl: string) => {
-      downloadImage(dataUrl);
-    });
+    fcGetDisplayImg()
+      ?.then((dataUrl: string) => {
+        downloadImage(dataUrl);
+      })
+      .catch((err) => alert("Something went wrong!Please try again later."));
   };
 
   useEffect(() => {
