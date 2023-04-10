@@ -129,7 +129,7 @@ function App() {
         text-white px-[3rem] py-[4.3rem] after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:left-0 after:block after:z-[51]`}
           >
             <div
-              className="block absolute content-[''] top-0 left-0 w-[300px] h-[300px]  rotate-45 -translate-x-1/2 -translate-y-1/2"
+              className="block absolute content-[''] top-0 left-0 w-[300px] h-[300px]  rotate-[58deg] -translate-x-1/2 -translate-y-[65%]"
               style={{ background: `${mainClr}` }}
             />
             <div
@@ -137,7 +137,10 @@ function App() {
               style={{ background: `${mainClr}` }}
             />
 
-            <div className="my-8 mx-16 font-bold text-7xl relative z-[10]">
+            <div className="mx-16 font-bold  relative z-[10]" style={{
+              lineHeight: 1 ,
+              fontSize: '5.6rem',
+            }}>
               <p className="-mx-12 text-9xl">《绝区零》玩家提醒 :</p>
               <hr className="invisible my-2" />
               <p>今日为『调律测试』结束后</p>
@@ -145,7 +148,7 @@ function App() {
               <p>
                 第{" "}
                 <span
-                  className="text-[12rem] font-semibold tracking-wider"
+                  className="text-[13rem] font-semibold tracking-wider"
                   style={{ color: `${mainClr}` }}
                   id="dayCount"
                 >
@@ -160,10 +163,16 @@ function App() {
             <img
               src={CharacterInfo[randNumber].image}
               ref={imgCharRef}
-              alt=""
+              alt={CharacterInfo[randNumber].name}
               id="Character"
-              height="100%"
-              className="h-full absolute bottom-0 right-0 z-[50] object-contain"
+              style={{
+                height: "100%",
+                position: "absolute",
+                bottom: 0,
+                right: 0,
+                zIndex: 50,
+                objectFit: "contain",
+              }}
             />
 
             <img
