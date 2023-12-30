@@ -15,6 +15,9 @@ import Soldier11 from "./char/10009.png";
 import BillyKid from "./char/10010.png";
 import NicoleDemara from "./char/10011.png";
 import AnbyDemara from "./char/10012.png";
+import Alexandrina from "./char/10013.png";
+import GraceHoward from "./char/10014.png";
+import EllenJoe from "./char/10015.png";
 
 // Category image
 import Section6 from "./cate/10024.png";
@@ -53,7 +56,10 @@ const character = {
     Soldier11,
     BillyKid,
     NicoleDemara,
-    AnbyDemara
+    AnbyDemara,
+    Alexandrina,
+    GraceHoward,
+    EllenJoe,
 }
 
 const category = {
@@ -64,7 +70,7 @@ const category = {
     GentleHouseAKACunningHares
 }
 
-const Images : Images = {
+const Images: Images = {
     Logo,
     background,
     character,

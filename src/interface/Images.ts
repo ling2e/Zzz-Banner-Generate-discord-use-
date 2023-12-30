@@ -20,6 +20,9 @@ export interface Images {
         BillyKid: string;
         NicoleDemara: string;
         AnbyDemara: string;
+        Alexandrina: string;
+        GraceHoward: string;
+        EllenJoe: string;
     };
     category: {
         Section6: string;
