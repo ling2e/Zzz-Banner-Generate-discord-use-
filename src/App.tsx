@@ -26,7 +26,7 @@ function App() {
     // Update the state with the number of days
     setDaysSinceStart(daysDiff);
 
-    setRandNum(((daysDiff - 1 +16) % Object.keys(CharacterInfo).length) + 1)
+    setRandNum(((daysDiff - 1 ) % Object.keys(CharacterInfo).length) + 1)
   }, []);
 
   
