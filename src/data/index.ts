@@ -1,4 +1,4 @@
-// importing iamge
+// importing image
 import Images from "../assets/images";
 
 interface CharacterInfoObject {
@@ -125,6 +125,35 @@ const CharacterInfo: CharacterInfoObject = {
     image: Images.character.Soukaku,
     CategoryImage: Images.category.Section6,
     color: "#6ea0d9",
+  },
+
+  13: {
+    name: "Alexandrina",
+    CnName: "亚历山德丽娜",
+    CnCategory: "维多利亚家政",
+    EnCategory: "Victoria Housekeeping Co.",
+    image: Images.character.Alexandrina,
+    CategoryImage: Images.category.VictoriaHousekeepingCo,
+    color: "#c4c1b1",
+  },
+  14: {
+    name: "Grace Howard",
+    CnName: "格莉丝·霍华德",
+    CnCategory: "白祇重工",
+    EnCategory: "Belobog Heavy Industries",
+    image: Images.character.GraceHoward,
+    CategoryImage: Images.category.BelobogHeavyIndustries,
+    color: "#ed6646",
+  },
+  15: {
+    name: "Ellen Joe",
+    CnName: "艾莲·乔",
+    CnCategory: "维多利亚家政",
+    EnCategory: "Victoria Housekeeping Co.",
+    image: Images.character.EllenJoe,
+    CategoryImage: Images.category.VictoriaHousekeepingCo,
+    color: "#bebfd2",
+
   },
 };
 
